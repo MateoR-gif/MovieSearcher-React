@@ -1,8 +1,8 @@
 function renderResults({ movies }) {
   return (
-    <ul>
+    <ul className="movies">
       {movies.map(movie => (
-        <li key={movie.id}>
+        <li className="movie" key={movie.id}>
           <h3>{movie.title}</h3>
           <p>{movie.year}</p>
           <img src={movie.poster} alt={movie.title} />
@@ -13,7 +13,7 @@ function renderResults({ movies }) {
 }
 
 function renderNoResults() {
-  return <h3>Movie Not Found {":("}</h3>;
+  return <img src="https://http.cat/404" alt="not found"></img>;
 }
 
 export default function Movies({ movies }) {

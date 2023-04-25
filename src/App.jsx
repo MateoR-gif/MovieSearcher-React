@@ -4,11 +4,12 @@ import { useMovies } from "./customHooks/useMovies";
 import { useSearch } from "./customHooks/useSearch";
 
 function App() {
-  const { movies } = useMovies();
-  const { error, handleSearchChange } = useSearch();
+  const { search, error, handleSearchChange } = useSearch();
+  const { movies, getMovies } = useMovies({search});
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    getMovies()
   };
 
   return (
